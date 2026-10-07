@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【Yuansu Tech arg】《旧录像带 VHS-2003》完整通关攻略</title>
+<style>
+  body { background: #fff; font-family: "SF Mono", Consolas, monospace; color: #000;
+    max-width: 760px; margin: 0 auto; padding: 60px 20px; font-size: 15px; line-height: 1.8; }
+  .header { margin-bottom: 20px; font-weight: bold; }
+  .notice { color: #666; margin-bottom: 40px; }
+  .notice span { display: inline-block; width: 90px; }
+  h2 { font-size: 16px; margin-top: 50px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+  .step { margin-bottom: 28px; padding-left: 20px; border-left: 2px solid #eee; }
+  .step-num { display: inline-block; background: #000; color: #fff; font-size: 12px;
+    padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .step-title { font-weight: bold; margin-bottom: 6px; }
+  code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; color: #c00; }
+  .ok { color: #005cc5; font-weight: bold; }
+  .warn { color: #c00; font-weight: bold; }
+  .box { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 16px 20px; margin: 16px 0; font-size: 14px; }
+  .footer { color: #999; font-size: 13px; border-top: 1px solid #eee; padding-top: 20px; margin-top: 60px; }
+</style>
+</head>
+<body>
+<div class="header">Yuansu Tech【YUANSUTECH】<br>旧录像带 VHS-2003<br>完整通关攻略</div>
+<div class="notice">
+  <span>[出品]</span> 【原创】YuansuTech<br>
+  <span>[禁止]</span> 盗用、转载 🚫<br>
+  <span>[建议]</span> Chrome / Edge
+</div>
+<h2>第一阶段：认识陆远</h2>
+<div class="step">
+  <div class="step-num">1-1</div>
+  <div class="step-title">index.html → home.html</div>
+  <p>录像带主人叫陆远，17 岁，2003 年 8 月 14 日之后失踪。</p>
+</div>
+<div class="step">
+  <div class="step-num">1-2</div>
+  <div class="step-title">about.html → 找到生日</div>
+  <p>陆远生日是 1986 年 6 月 28 日 → <code>0628</code>。用于解锁 tape-03。</p>
+</div>
+<h2>第二阶段：收集三个碎片</h2>
+<div class="step">
+  <div class="step-num">2-1</div>
+  <div class="step-title">box.html → 4417</div>
+  <p>磁带编号 VHS-4417 → <code>4417</code>。用于解锁终端。</p>
+</div>
+<div class="step">
+  <div class="step-num">2-2</div>
+  <div class="step-title">missing.html → 0814</div>
+  <p>失踪日期 2003 年 8 月 14 日 → <code>0814</code>。用于 decode.html 验证。</p>
+</div>
+<h2>第三阶段：解锁</h2>
+<div class="step">
+  <div class="step-num">3-1</div>
+  <div class="step-title">index.html → tape-03</div>
+  <p>输入 <code>0628</code>。看到录像中断的最后一帧。</p>
+</div>
+<div class="step">
+  <div class="step-num">3-2</div>
+  <div class="step-title">index.html → terminal.html</div>
+  <p>输入 <code>4417</code>。进入终端。</p>
+</div>
+<div class="step">
+  <div class="step-num">3-3</div>
+  <div class="step-title">终端里输入 unlock 4417</div>
+  <p>✅ 解锁 final.html。</p>
+</div>
+<h2>第四阶段：结局</h2>
+<div class="step">
+  <div class="step-num">4-1</div>
+  <div class="step-title">final.html</div>
+  <p>听陆远最后的声音。通关。</p>
+</div>
+<div class="box">
+  <b>🔑 密码汇总</b><br>
+  <code>0628</code> —— 解锁 tape-03（生日）<br>
+  <code>4417</code> —— 解锁 terminal.html（磁带编号）<br>
+  <code>0814</code> —— decode.html 验证（失踪日）
+</div>
+<div class="footer">
+  Copyright © YuansuTech. All rights reserved.<br>
+  陆远没说完的话，你替他听完了。
+</div>
+</body>
+</html>
