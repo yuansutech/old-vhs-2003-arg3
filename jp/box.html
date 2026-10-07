@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>テープボックス</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">box.html —— テープボックス情報</div>
+    </div>
+    <div class="window-body">
+      <p><strong>シリアル番号：</strong><span class="hl">VHS-4417</span></p>
+      <p><strong>外装色：</strong>黒 · 傷あり</p>
+      <p><strong>手書きラベル：</strong>「2003.夏 · 消さないで」</p>
+      <p><strong>同梱物：</strong>一度折った原稿用紙、鉛筆書き</p>
+      <p class="dim">原稿用紙の裏面：<br>
+      「<span class="warn">4417</span>。もし僕がいなくなったら、これでターミナルを開いて。」</p>
+      <div class="timetower">
+        <strong>🔑 テープシリアル</strong><br>
+        ボックスに印刷された VHS-4417 → <span class="hl">4417</span>
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="検索…" autocomplete="off">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 テープシリアル VHS-4417 → パスワード 4417');
+});
+</script>
+</body>
+</html>

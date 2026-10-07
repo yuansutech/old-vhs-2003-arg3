@@ -1,0 +1,86 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  background: #0f0d0a; color: #d8d4cc; min-height: 100vh;
+}
+.drive { max-width: 860px; margin: 0 auto; padding: 36px 20px 80px; }
+.window { background: #16130e; border: 1px solid #2e2820; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+.window-bar { background: #1e1a14; padding: 8px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #2e2820; }
+.window-bar .dots { display: flex; gap: 6px; }
+.window-bar .dots span { width: 11px; height: 11px; border-radius: 50%; }
+.window-bar .dots span:nth-child(1) { background: #ff5f57; }
+.window-bar .dots span:nth-child(2) { background: #febc2e; }
+.window-bar .dots span:nth-child(3) { background: #28c840; }
+.window-bar .title { flex: 1; font-size: 0.8rem; color: #8a8579; font-family: "Courier New", monospace; }
+.window-body { padding: 22px 26px 28px; line-height: 1.95; font-size: 0.92rem; }
+.window-body p { margin-bottom: 12px; }
+.hl { color: #c4a35a; }
+.warn { color: #c98a4b; }
+.cold { color: #8a94a6; }
+.dim { color: #6e6b64; font-size: 0.82rem; }
+.file-list { display: flex; flex-direction: column; }
+.file-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  border-radius: 5px; cursor: pointer; font-size: 0.9rem;
+  border: 1px solid transparent; transition: all 0.15s;
+}
+.file-item:hover { background: #1e1a14; border-color: #2e2820; }
+.file-item .icon { font-size: 1.1rem; width: 22px; text-align: center; }
+.file-item .name { flex: 1; color: #c8c4bc; }
+.file-item .size { font-size: 0.78rem; color: #6e6b64; font-family: "Courier New", monospace; }
+.file-item.locked { opacity: 0.4; cursor: not-allowed; }
+.file-item.locked .name { text-decoration: line-through; }
+.searchbar { display: flex; gap: 8px; margin: 16px 0; }
+.searchbar input {
+  flex: 1; padding: 12px 15px; background: #0f0d0a;
+  border: 1px solid #2e2820; border-radius: 6px; color: #d8d4cc;
+  font-size: 0.9rem; font-family: inherit; outline: none;
+}
+.searchbar button {
+  padding: 12px 22px; background: #2e2820; border: 1px solid #3e3830;
+  border-radius: 6px; color: #b8b4ac; font-family: inherit; font-size: 0.9rem; cursor: pointer;
+}
+.terminal {
+  background: #0a0a0a; color: #ffb300; font-family: "Courier New", monospace;
+  padding: 20px; border-radius: 6px; font-size: 0.85rem; line-height: 1.8;
+  min-height: 360px; max-height: 520px; overflow-y: auto;
+}
+.terminal .line { white-space: pre-wrap; margin-bottom: 2px; }
+.terminal .err { color: #ff5f57; }
+.terminal .ok { color: #7ee0ff; }
+.timetower {
+  background: #0f0d0a; border: 1px solid #2e2820;
+  border-radius: 6px; padding: 14px 18px; margin: 16px 0;
+  font-size: 0.82rem; color: #8a94a6;
+}
+.timetower strong { color: #c4a35a; }
+.btn {
+  padding: 10px 20px; background: #2e2820; border: 1px solid #3e3830;
+  border-radius: 5px; color: #c8c4bc; font-family: inherit;
+  font-size: 0.88rem; cursor: pointer;
+}
+.btn.primary { background: #3a2e1a; border-color: #5a4a28; color: #c4a35a; }
+.notebook { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+.notebook-btn {
+  background: #2e2820; color: #c8c4bc; border: 1px solid #3e3830;
+  border-radius: 50%; width: 50px; height: 50px;
+  font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.notebook-panel {
+  display: none; position: absolute; bottom: 60px; right: 0;
+  width: 320px; max-height: 420px; background: #16130e;
+  border: 1px solid #3e3830; border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  overflow-y: auto; padding: 16px;
+}
+.notebook-panel.open { display: block; }
+.notebook-panel h3 {
+  font-size: 0.85rem; margin-bottom: 12px; color: #c4a35a;
+  border-bottom: 1px solid #2e2820; padding-bottom: 8px;
+  font-family: "Courier New", monospace;
+}
+.notebook-panel .item {
+  font-size: 0.82rem; color: #c8c4bc; padding: 8px 0;
+  border-bottom: 1px dashed #1e1a14; line-height: 1.5;
+}
+.notebook-panel .item .time { font-size: 0.68rem; color: #6e6b64; display: block; margin-top: 2px; }

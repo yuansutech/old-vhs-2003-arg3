@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>해독기</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">decode.html —— 루위안의 해독기</div>
+    </div>
+    <div class="window-body">
+      <p class="dim">세 개의 숫자 조각을 입력하세요. 모두 맞으면 전체 비밀번호가 표시됩니다.</p>
+      <div style="margin:20px 0;">
+        <label class="dim" style="display:block;margin-bottom:6px;">조각 1 (생일):</label>
+        <input type="text" id="f1" maxlength="4" placeholder="····" style="background:#0f0d0a;border:1px solid #3e3830;color:#ffb300;padding:10px 14px;border-radius:4px;font-family:'Courier New',monospace;font-size:1rem;letter-spacing:0.3em;text-align:center;width:160px;outline:none;">
+      </div>
+      <div style="margin:20px 0;">
+        <label class="dim" style="display:block;margin-bottom:6px;">조각 2 (테이프 일련번호):</label>
+        <input type="text" id="f2" maxlength="4" placeholder="····" style="background:#0f0d0a;border:1px solid #3e3830;color:#ffb300;padding:10px 14px;border-radius:4px;font-family:'Courier New',monospace;font-size:1rem;letter-spacing:0.3em;text-align:center;width:160px;outline:none;">
+      </div>
+      <div style="margin:20px 0;">
+        <label class="dim" style="display:block;margin-bottom:6px;">조각 3 (실종일):</label>
+        <input type="text" id="f3" maxlength="4" placeholder="····" style="background:#0f0d0a;border:1px solid #3e3830;color:#ffb300;padding:10px 14px;border-radius:4px;font-family:'Courier New',monospace;font-size:1rem;letter-spacing:0.3em;text-align:center;width:160px;outline:none;">
+      </div>
+      <button class="btn primary" onclick="tryDecode()" style="margin-top:16px;">해독 시도</button>
+      <p id="decode-result" style="margin-top:16px;"></p>
+      <div class="timetower">
+        <strong>💡 힌트</strong><br>
+        세 개의 조각, 각각 4자리. 모두 일치하면 전체 비밀번호가 나타납니다.
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+function tryDecode() {
+  const f1 = document.getElementById('f1').value.trim();
+  const f2 = document.getElementById('f2').value.trim();
+  const f3 = document.getElementById('f3').value.trim();
+  const r = document.getElementById('decode-result');
+  if (f1 === '0628' && f2 === '4417' && f3 === '0814') {
+    r.innerHTML = '<span style="color:#7ee0ff;">✅ 해독 성공. 전체 키: <strong>0628-4417-0814</strong></span>';
+    saveNote('🔓 해독 성공: 0628-4417-0814');
+  } else {
+    r.innerHTML = '<span style="color:#ff5f57;">❌ 조각이 일치하지 않습니다. 각 숫자를 확인하세요.</span>';
+  }
+}
+</script>
+</body>
+</html>

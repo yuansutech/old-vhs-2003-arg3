@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ニュースアーカイブ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">news.html —— 青川日報 · 2003年8-9月</div>
+    </div>
+    <div class="window-body">
+      <p><strong>2003-08-22 · 第三高校の生徒が行方不明</strong></p>
+      <p class="dim">青川第三高校二年三組の陸遠さん（17）が8月14日以降帰宅していない。家族が警察に届け出た。警察が捜査中。</p>
+      <p style="margin-top:20px;"><strong>2003-09-03 · 警察が旧埠頭一帯を捜索</strong></p>
+      <p class="dim">警察は市の北西にある旧埠頭地区を捜索し、住民と廃建物十数か所を訪ねた。現在まで行方不明生徒の手がかりは見つかっていない。</p>
+      <p style="margin-top:20px;"><strong>2003-09-18 · 事件は失踪として扱われる</strong></p>
+      <p class="dim">警察は陸遠さんの事件を失踪として処理すると発表した。新たな手がかりが出れば再捜査する方針。</p>
+      <div class="timetower">
+        <strong>📌 要点</strong><br>
+        8月14日以降、陸遠は二度と現れなかった。<br>
+        旧埠頭地区が捜索されたが、結果は出なかった。
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="検索…" autocomplete="off">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('📰 ニュース：警察は旧埠頭を捜索したが、手がかりは見つからなかった');
+});
+</script>
+</body>
+</html>

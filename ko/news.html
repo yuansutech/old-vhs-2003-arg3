@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>뉴스</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">news.html —— 칭촨일보 · 2003년 8-9월</div>
+    </div>
+    <div class="window-body">
+      <p><strong>2003-08-22 · 제3고 학생 실종</strong></p>
+      <p class="dim">칭촨 제3고 2학년 3반 루위안(17세)이 8월 14일 이후 돌아오지 않고 있다. 가족이 경찰에 신고했다. 경찰이 수사 중이다.</p>
+      <p style="margin-top:20px;"><strong>2003-09-03 · 경찰, 옛 부두 일대 수색</strong></p>
+      <p class="dim">경찰이 도시 북서쪽 옛 부두 지구를 수색하고, 주민과 폐건물 10여 곳을 방문했다. 현재까지 실종 학생의 단서는 발견되지 않았다.</p>
+      <p style="margin-top:20px;"><strong>2003-09-18 · 사건, 실종으로 분류</strong></p>
+      <p class="dim">경찰은 루위안 사건을 실종으로 처리한다고 밝혔다. 새로운 단서가 나오면 재수사할 예정이다.</p>
+      <div class="timetower">
+        <strong>📌 핵심</strong><br>
+        8월 14일 이후 루위안은 다시 나타나지 않았다.<br>
+        옛 부두 지구가 수색됐지만 결과는 없었다.
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="검색…" autocomplete="off">
+        <button>검색</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('📰 뉴스: 경찰이 옛 부두를 수색했으나 단서를 찾지 못함');
+});
+</script>
+</body>
+</html>

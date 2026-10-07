@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VHS-2003 · Tape List</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">VHS Player · Tape Box VHS-2003 · Read-only</div>
+    </div>
+    <div class="window-body">
+      <p class="cold">You push the tape into the machine. The screen lights up. The tape head turns, quietly.</p>
+      <p>The label reads: <span class="hl">"Summer 2003"</span>. Below, in small handwriting: <span class="warn">"If I'm gone, finish watching it for me."</span></p>
+      <p class="cold">There are several video segments and documents. Three are locked.</p>
+      <div class="file-list" style="margin-top:20px;">
+        <div class="file-item" onclick="location.href='home.html'">
+          <div class="icon">📼</div><div class="name">home.html —— Tape Introduction</div><div class="size">3.4 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='about.html'">
+          <div class="icon">👤</div><div class="name">about.html —— About Lu Yuan</div><div class="size">2.7 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='box.html'">
+          <div class="icon">📦</div><div class="name">box.html —— Tape Box Info</div><div class="size">1.5 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='tape-01.html'">
+          <div class="icon">🎞️</div><div class="name">tape-01 —— First Segment</div><div class="size">18:24</div>
+        </div>
+        <div class="file-item" onclick="location.href='tape-02.html'">
+          <div class="icon">🎞️</div><div class="name">tape-02 —— Second Segment</div><div class="size">32:07</div>
+        </div>
+        <div class="file-item locked" id="file-tape3">
+          <div class="icon">🔒</div><div class="name">tape-03 —— Final Segment</div><div class="size">Password required</div>
+        </div>
+        <div class="file-item" onclick="location.href='notes.html'">
+          <div class="icon">📝</div><div class="name">notes.html —— Lu Yuan's Notes</div><div class="size">2.9 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='school.html'">
+          <div class="icon">🏫</div><div class="name">school.html —— School Records</div><div class="size">1.7 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='forum.html'">
+          <div class="icon">💭</div><div class="name">forum.html —— Forum Thread</div><div class="size">3.2 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='news.html'">
+          <div class="icon">📰</div><div class="name">news.html —— News Archive</div><div class="size">1.8 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='missing.html'">
+          <div class="icon">🔍</div><div class="name">missing.html —— Missing Person File</div><div class="size">2.1 KB</div>
+        </div>
+        <div class="file-item" id="file-terminal" onclick="goTerminal()">
+          <div class="icon">🔒</div><div class="name">terminal.html —— ???</div><div class="size">UNKNOWN</div>
+        </div>
+        <div class="file-item" id="file-decode" onclick="goDecode()">
+          <div class="icon">🔧</div><div class="name">decode.html —— Decoder</div><div class="size">Open</div>
+        </div>
+        <div class="file-item locked" id="file-final">
+          <div class="icon">🔒</div><div class="name">final.html —— Final Footage</div><div class="size">UNKNOWN</div>
+        </div>
+      </div>
+      <div class="timetower">
+        <strong>📼 TAPE INFO</strong><br>
+        Serial: VHS-2003 · Format: NTSC · Duration: approx. 90 min<br>
+        Recorded by: Lu Yuan (17, Qingchuan No.3 High School)<br>
+        Last frame: 2003-08-14 19:42
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="Search files… (try 'box', 'notes', 'missing')" autocomplete="off">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;">
+    <button class="btn" onclick="if(confirm('Reset all progress?')){resetState();location.reload();}">Reset Progress</button>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+function goTerminal() {
+  const s = getState();
+  if (s.terminalUnlocked) location.href = 'terminal.html';
+  else alert('File protected. Find the terminal password first.');
+}
+function goDecode() {
+  location.href = 'decode.html';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const s = getState();
+  if (s.tape3Unlocked) {
+    const f = document.getElementById('file-tape3');
+    f.classList.remove('locked');
+    f.onclick = () => location.href = 'tape-03.html';
+    f.querySelector('.icon').textContent = '🎞️';
+    f.querySelector('.size').textContent = 'UNLOCKED';
+  } else {
+    document.getElementById('file-tape3').onclick = () => {
+      const pwd = prompt('Enter 4-digit password:');
+      if (pwd === '0628') {
+        setState({ tape3Unlocked: true });
+        saveNote('🔓 Unlocked tape-03. Password: 0628 (Lu Yuan\'s birthday)');
+        location.href = 'tape-03.html';
+      } else if (pwd) { alert('Wrong password.'); }
+    };
+  }
+  if (s.terminalUnlocked) {
+    const f = document.getElementById('file-terminal');
+    f.querySelector('.icon').textContent = '⚡';
+    f.querySelector('.size').textContent = 'UNLOCKED';
+  }
+  if (s.finalUnlocked) {
+    const f = document.getElementById('file-final');
+    f.classList.remove('locked');
+    f.onclick = () => location.href = 'final.html';
+    f.querySelector('.icon').textContent = '📺';
+    f.querySelector('.size').textContent = 'UNLOCKED';
+  } else {
+    document.getElementById('file-final').onclick = () => {
+      alert('File protected. Unlock via the terminal first.');
+    };
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>첫 번째 영상</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">tape-01 —— 첫 번째 영상 · 2003-06-30</div>
+    </div>
+    <div class="window-body">
+      <p class="dim">영상 텍스트 변환본. 노이즈가 있지만 오디오는 선명하다.</p>
+      <div style="background:#0a0a0a;color:#ffb300;padding:22px;border-radius:6px;font-family:'Courier New',monospace;font-size:0.85rem;line-height:2;margin:20px 0;">
+        <p>[00:00:00] 화면 흔들림. 방. 커튼이 반쯤 걷혀 있다. 창밖에 나무 한 그루.</p>
+        <p>[00:00:12] 루위안: "오늘은 6월 30일. 여름방학 첫날. 이 기계가 아직 녹화가 되는지 확인해보자."</p>
+        <p>[00:00:20] 카메라가 책상으로. 펼친 문제집. 《과학세계》 한 권. 반쯤 남은 콜라.</p>
+        <p>[00:00:35] 루위안: "일단 심심한 걸 찍자. 재미있는 건 나중에 찍을게."</p>
+        <p>[00:01:40] 주황색 고양이가 화면에 들어와 렌즈를 툭 친다.</p>
+        <p>[00:02:15] 루위안: "됐다. 오늘은 여기까지."</p>
+        <p>[02:30:00] 화면이 끊기고 나머지 두 시간은 빈 화면.</p>
+        <p>[영상 종료]</p>
+      </div>
+      <div class="timetower">
+        <strong>📌 기록</strong><br>
+        특별한 건 없다. 루위안이 새 기계를 테스트하는 중.<br>
+        <span class="hl">"재미있는 건 나중에"라고 말한다.</span>
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="검색…" autocomplete="off">
+        <button>검색</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('📼 첫 번째: 2003-06-30, 여름방학 첫날, 루위안이 카메라 테스트');
+});
+</script>
+</body>
+</html>

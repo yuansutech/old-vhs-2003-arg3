@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>최종 영상</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .audio-bar {
+    display: flex; align-items: center; gap: 12px;
+    background: #0f0d0a; border: 1px solid #2e2820;
+    border-radius: 8px; padding: 12px 18px;
+    margin: 20px 0; font-size: 0.82rem; color: #8a8579;
+  }
+  .audio-bar .icon { font-size: 1.2rem; color: #c4a35a; }
+  .audio-bar .label { flex: 1; letter-spacing: 0.08em; }
+  .audio-bar button {
+    padding: 7px 16px; background: #1e1a14;
+    border: 1px solid #3e3830; border-radius: 5px;
+    color: #c8c4bc; font-family: inherit; font-size: 0.8rem; cursor: pointer;
+  }
+  .audio-bar button.playing { border-color: #c4a35a; color: #c4a35a; background: rgba(196,163,90,0.08); }
+</style>
+</head>
+<body>
+<audio id="bgm" src="final-recording.wav" preload="auto"></audio>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">final.html —— 최종 영상 · 2003-08-14 19:42</div>
+    </div>
+    <div class="window-body">
+      <div class="audio-bar">
+        <span class="icon">🎙️</span>
+        <span class="label">테이프 끝 오디오 · 루위안의 마지막 목소리 · 47초</span>
+        <button id="audioBtn" onclick="toggleAudio()">▶ 재생</button>
+      </div>
+      <p class="dim">영상은 19:42에 끊긴다. 이 오디오는 테이프의 물리적 하부에서 복구됐다.</p>
+      <div style="background:#0a0a0a;color:#ffb300;padding:24px;border-radius:6px;font-family:'Courier New',monospace;font-size:0.85rem;line-height:2;margin:20px 0;">
+        <p>[녹음 시작]</p>
+        <p>…사실 그렇게 무섭진 않아.</p>
+        <p>누군지 알아. 그들이 뭘 원하는지도 알아.</p>
+        <p>그냥 이렇게 빨리 올 줄은 몰랐어.</p>
+        <p>만약 누군가 이 테이프를 본다면—</p>
+        <p>나를 찾으러 오지 마.</p>
+        <p>그리고 그들을 미워하지도 마.</p>
+        <p>그냥 평범한 여름이었고, 그게 끝난 거야.</p>
+        <p>그게 전부야.</p>
+        <p>[녹음 종료]</p>
+      </div>
+      <div style="text-align:center;padding:20px 0;">
+        <p style="color:#c4a35a;font-size:1rem;letter-spacing:0.15em;">— 끝 —</p>
+        <p class="dim" style="margin-top:8px;">테이프를 끝까지 봐줘서 고마워.</p>
+        <p class="dim" style="margin-top:24px;font-size:0.75rem;">루위안 · 1986-2003 · 그는 여름 하나를 기록했다</p>
+        <p class="dim" style="font-size:0.75rem;">너 · 지금 · 이 테이프를 마지막까지 재생한 사람</p>
+      </div>
+      <div class="timetower" style="margin-top:20px;">
+        <strong>🕰️ 그 후</strong><br>
+        2003년 9월, 경찰이 옛 부두를 수색했지만 아무것도 찾지 못했다.<br>
+        2003년 10월, 루위안의 부모가 칭촨을 떠났다. 테이프는 옛집에 남겨졌다.<br>
+        2024년, 너는 벼룩시장에서 이 테이프를 샀다.<br>
+        너는 이 테이프를 끝까지 재생한 첫 번째 사람이다.
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <button class="btn" onclick="if(confirm('모든 진행 상황을 초기화하시겠습니까?')){resetState();location.href='index.html';}">처음부터</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('audioBtn');
+  function toggleAudio() {
+    if (bgm.paused) {
+      bgm.play(); btn.textContent = '⏸ 일시정지'; btn.classList.add('playing');
+    } else {
+      bgm.pause(); btn.textContent = '▶ 재생'; btn.classList.remove('playing');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    bgm.volume = 0.85;
+    bgm.play().then(() => {
+      btn.textContent = '⏸ 일시정지'; btn.classList.add('playing');
+    }).catch(() => {});
+  });
+</script>
+</body>
+</html>

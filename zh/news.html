@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>新闻</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">news.html —— 青川日报 · 2003 年 8-9 月</div>
+    </div>
+    <div class="window-body">
+      <p><strong>2003-08-22 · 三中一名学生失踪</strong></p>
+      <p class="dim">青川三中高二(3)班学生陆远（17 岁）自 8 月 14 日之后未归。家属已报警。警方正在调查中。</p>
+      <p style="margin-top:20px;"><strong>2003-09-03 · 警方排查老码头区域</strong></p>
+      <p class="dim">近日，警方对城区西北老码头片区展开排查，走访居民及废弃厂房十余处。目前暂未发现失踪学生线索。</p>
+      <p style="margin-top:20px;"><strong>2003-09-18 · 案件暂列为失踪</strong></p>
+      <p class="dim">警方表示，陆远案暂列失踪处理，后续如有新线索将重新调查。</p>
+      <div class="timetower">
+        <strong>📌 关键</strong><br>
+        8 月 14 日之后，陆远没再出现。<br>
+        老码头片区被排查过，但没有结果。
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="搜索…" autocomplete="off">
+        <button>搜索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('📰 新闻：警方排查过老码头片区，未发现线索');
+});
+</script>
+</body>
+</html>

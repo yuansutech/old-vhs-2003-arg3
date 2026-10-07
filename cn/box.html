@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>磁带盒</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">box.html —— 磁带盒信息</div>
+    </div>
+    <div class="window-body">
+      <p><strong>磁带编号：</strong><span class="hl">VHS-4417</span></p>
+      <p><strong>外壳颜色：</strong>黑色 · 有磨损</p>
+      <p><strong>标签手写：</strong>“2003.夏 · 别擦掉”</p>
+      <p><strong>附带物件：</strong>一张折过的作文纸，铅笔写的</p>
+      <p class="dim">作文纸背面写着：<br>
+      “<span class="warn">4417</span>。如果我不在了，用这个打开终端。”</p>
+      <div class="timetower">
+        <strong>🔑 磁带编号</strong><br>
+        磁带盒上印着 VHS-4417 → <span class="hl">4417</span>
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="搜索…" autocomplete="off">
+        <button>搜索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 磁带编号 VHS-4417 → 密码 4417');
+});
+</script>
+</body>
+</html>

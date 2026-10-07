@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Missing Person File</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">missing.html —— Qingchuan Police Department</div>
+    </div>
+    <div class="window-body">
+      <p><strong>Name:</strong> Lu Yuan</p>
+      <p><strong>Sex:</strong> Male</p>
+      <p><strong>Born:</strong> 1986</p>
+      <p><strong>Missing since:</strong> <span class="hl">August 14, 2003</span></p>
+      <p><strong>Last seen:</strong> Lu Yuan's home, West District, Qingchuan</p>
+      <p><strong>Status:</strong> <span class="warn">UNRESOLVED</span></p>
+      <hr style="border:none;border-top:1px dashed #2e2820;margin:16px 0;">
+      <p class="dim">On the evening of August 14, 2003, Lu Yuan was last seen by a neighbor at home. He disappeared that night. His parents found the house empty the next day.</p>
+      <p class="dim">A Panasonic camcorder and one VHS tape (serial VHS-4417) were found in his room.</p>
+      <p class="dim">The tape contains footage from June to August 2003, including fragments where he mentions "a vehicle following him."</p>
+      <p class="dim">A silver van had been parked in the neighborhood for several days. It disappeared after August 15. No plate number was recorded.</p>
+      <p class="warn" style="margin-top:12px;">Case remains open.</p>
+      <div class="timetower">
+        <strong>🔑 FILE NUMBER</strong><br>
+        QC2003-0814<br>
+        This number is simultaneously: the date of disappearance + the last recorded date
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="Search…" autocomplete="off">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 File number QC2003-0814, password 0814');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tape Box</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">box.html —— Tape Box Info</div>
+    </div>
+    <div class="window-body">
+      <p><strong>Serial number:</strong> <span class="hl">VHS-4417</span></p>
+      <p><strong>Shell color:</strong> Black · worn</p>
+      <p><strong>Handwritten label:</strong> "Summer 2003 · Do not erase"</p>
+      <p><strong>Extra item:</strong> One folded sheet of essay paper, written in pencil</p>
+      <p class="dim">On the back of the sheet:<br>
+      "<span class="warn">4417</span>. If I'm gone, use this to open the terminal."</p>
+      <div class="timetower">
+        <strong>🔑 TAPE SERIAL</strong><br>
+        Printed on the box: VHS-4417 → <span class="hl">4417</span>
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="Search…" autocomplete="off">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 Tape serial VHS-4417 → password 4417');
+});
+</script>
+</body>
+</html>

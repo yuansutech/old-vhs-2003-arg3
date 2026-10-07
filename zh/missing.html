@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>失踪档案</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">missing.html —— 青川市公安局</div>
+    </div>
+    <div class="window-body">
+      <p><strong>姓名：</strong>陆远</p>
+      <p><strong>性别：</strong>男</p>
+      <p><strong>出生：</strong>1986 年</p>
+      <p><strong>失踪日期：</strong><span class="hl">2003 年 8 月 14 日</span></p>
+      <p><strong>失踪地点：</strong>青川市城西区 · 陆远家</p>
+      <p><strong>状态：</strong><span class="warn">未找到</span></p>
+      <hr style="border:none;border-top:1px dashed #2e2820;margin:16px 0;">
+      <p class="dim">2003 年 8 月 14 日傍晚，陆远在家中被邻居最后一次目击。当晚失踪。父母次日回家发现家中无人。</p>
+      <p class="dim">在其房间发现一台松下摄像机与一盘录像带（编号 VHS-4417）。</p>
+      <p class="dim">录像带内记录 2003 年 6 月至 8 月的内容，含其提及“被车辆跟踪”的片段。</p>
+      <p class="dim">同小区曾有一辆银灰色面包车停留多日，8 月 15 日后消失。车牌号未记录。</p>
+      <p class="warn" style="margin-top:12px;">案件至今未破。</p>
+      <div class="timetower">
+        <strong>🔑 档案编号</strong><br>
+        QC2003-0814<br>
+        这个编号同时是：失踪日期 + 最后录像日期
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="搜索…" autocomplete="off">
+        <button>搜索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 失踪档案编号 QC2003-0814，密码 0814');
+});
+</script>
+</body>
+</html>

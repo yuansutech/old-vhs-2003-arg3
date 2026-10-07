@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VHS-2003 · テープ一覧</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">VHSプレイヤー · テープボックス VHS-2003 · 読み取り専用</div>
+    </div>
+    <div class="window-body">
+      <p class="cold">テープを機械に差し込む。画面が光る。テープヘッドが静かに回る。</p>
+      <p>ラベルにはこう書かれている：<span class="hl">「2003.夏」</span>。その下に小さな字で：<span class="warn">「もし私がいなくなったら、代わりに最後まで見てほしい。」</span></p>
+      <p class="cold">いくつかの映像と書類がある。うち三つは施錠されている。</p>
+      <div class="file-list" style="margin-top:20px;">
+        <div class="file-item" onclick="location.href='home.html'">
+          <div class="icon">📼</div><div class="name">home.html —— テープ紹介</div><div class="size">3.4 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='about.html'">
+          <div class="icon">👤</div><div class="name">about.html —— 陸遠について</div><div class="size">2.7 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='box.html'">
+          <div class="icon">📦</div><div class="name">box.html —— テープボックス情報</div><div class="size">1.5 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='tape-01.html'">
+          <div class="icon">🎞️</div><div class="name">tape-01 —— 第一の映像</div><div class="size">18:24</div>
+        </div>
+        <div class="file-item" onclick="location.href='tape-02.html'">
+          <div class="icon">🎞️</div><div class="name">tape-02 —— 第二の映像</div><div class="size">32:07</div>
+        </div>
+        <div class="file-item locked" id="file-tape3">
+          <div class="icon">🔒</div><div class="name">tape-03 —— 最後の映像</div><div class="size">パスワード必要</div>
+        </div>
+        <div class="file-item" onclick="location.href='notes.html'">
+          <div class="icon">📝</div><div class="name">notes.html —— 陸遠のノート</div><div class="size">2.9 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='school.html'">
+          <div class="icon">🏫</div><div class="name">school.html —— 学校記録</div><div class="size">1.7 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='forum.html'">
+          <div class="icon">💭</div><div class="name">forum.html —— フォーラムスレッド</div><div class="size">3.2 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='news.html'">
+          <div class="icon">📰</div><div class="name">news.html —— ニュースアーカイブ</div><div class="size">1.8 KB</div>
+        </div>
+        <div class="file-item" onclick="location.href='missing.html'">
+          <div class="icon">🔍</div><div class="name">missing.html —— 失踪者ファイル</div><div class="size">2.1 KB</div>
+        </div>
+        <div class="file-item" id="file-terminal" onclick="goTerminal()">
+          <div class="icon">🔒</div><div class="name">terminal.html —— ???</div><div class="size">不明</div>
+        </div>
+        <div class="file-item" id="file-decode" onclick="goDecode()">
+          <div class="icon">🔧</div><div class="name">decode.html —— 解読ツール</div><div class="size">開く</div>
+        </div>
+        <div class="file-item locked" id="file-final">
+          <div class="icon">🔒</div><div class="name">final.html —— 最終映像</div><div class="size">不明</div>
+        </div>
+      </div>
+      <div class="timetower">
+        <strong>📼 テープ情報</strong><br>
+        シリアル：VHS-2003 · 方式：NTSC · 長さ：約90分<br>
+        撮影者：陸遠（17歳、青川第三高校）<br>
+        最終記録：2003-08-14 19:42
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="ファイル検索…（「テープ」「ノート」「失踪」）" autocomplete="off">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;">
+    <button class="btn" onclick="if(confirm('すべての進行状況をリセットしますか？')){resetState();location.reload();}">進行状況をリセット</button>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+function goTerminal() {
+  const s = getState();
+  if (s.terminalUnlocked) location.href = 'terminal.html';
+  else alert('ファイルは保護されています。先にターミナルのパスワードを見つけてください。');
+}
+function goDecode() {
+  location.href = 'decode.html';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const s = getState();
+  if (s.tape3Unlocked) {
+    const f = document.getElementById('file-tape3');
+    f.classList.remove('locked');
+    f.onclick = () => location.href = 'tape-03.html';
+    f.querySelector('.icon').textContent = '🎞️';
+    f.querySelector('.size').textContent = '解除済み';
+  } else {
+    document.getElementById('file-tape3').onclick = () => {
+      const pwd = prompt('4桁のパスワードを入力：');
+      if (pwd === '0628') {
+        setState({ tape3Unlocked: true });
+        saveNote('🔓 tape-03解除。パスワード：0628（陸遠の誕生日）');
+        location.href = 'tape-03.html';
+      } else if (pwd) { alert('パスワードが違います。'); }
+    };
+  }
+  if (s.terminalUnlocked) {
+    const f = document.getElementById('file-terminal');
+    f.querySelector('.icon').textContent = '⚡';
+    f.querySelector('.size').textContent = '解除済み';
+  }
+  if (s.finalUnlocked) {
+    const f = document.getElementById('file-final');
+    f.classList.remove('locked');
+    f.onclick = () => location.href = 'final.html';
+    f.querySelector('.icon').textContent = '📺';
+    f.querySelector('.size').textContent = '解除済み';
+  } else {
+    document.getElementById('file-final').onclick = () => {
+      alert('ファイルは保護されています。先にターミナルで解除してください。');
+    };
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>테이프 박스</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">box.html —— 테이프 박스 정보</div>
+    </div>
+    <div class="window-body">
+      <p><strong>일련번호:</strong> <span class="hl">VHS-4417</span></p>
+      <p><strong>외형 색상:</strong> 검정 · 마모 있음</p>
+      <p><strong>손글씨 라벨:</strong> "2003.여름 · 지우지 마"</p>
+      <p><strong>동봉품:</strong> 한 번 접힌 원고지, 연필로 씀</p>
+      <p class="dim">원고지 뒷면:<br>
+      "<span class="warn">4417</span>. 내가 없어지면, 이걸로 터미널을 열어."</p>
+      <div class="timetower">
+        <strong>🔑 테이프 일련번호</strong><br>
+        박스에 인쇄된 VHS-4417 → <span class="hl">4417</span>
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="검색…" autocomplete="off">
+        <button>검색</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 테이프 일련번호 VHS-4417 → 비밀번호 4417');
+});
+</script>
+</body>
+</html>

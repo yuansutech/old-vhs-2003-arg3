@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News Archive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">news.html —— Qingchuan Daily · August-September 2003</div>
+    </div>
+    <div class="window-body">
+      <p><strong>2003-08-22 · Student from No.3 High reported missing</strong></p>
+      <p class="dim">Lu Yuan, 17, class 3, Grade 2 at Qingchuan No.3 High School, has not been home since August 14. Family has reported to police. Investigation ongoing.</p>
+      <p style="margin-top:20px;"><strong>2003-09-03 · Police sweep old dock area</strong></p>
+      <p class="dim">Police have searched the old dock district in the northwest of the city, visiting residents and abandoned buildings. No leads found so far.</p>
+      <p style="margin-top:20px;"><strong>2003-09-18 · Case listed as missing person</strong></p>
+      <p class="dim">Police state the Lu Yuan case is being handled as a missing person case. It will be reopened if new leads emerge.</p>
+      <div class="timetower">
+        <strong>📌 KEY</strong><br>
+        After August 14, Lu Yuan never appeared again.<br>
+        The old dock area was searched, but nothing was found.
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="Search…" autocomplete="off">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('📰 News: police searched the old dock area, found nothing');
+});
+</script>
+</body>
+</html>

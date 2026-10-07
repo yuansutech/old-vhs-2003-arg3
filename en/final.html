@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Final Footage</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .audio-bar {
+    display: flex; align-items: center; gap: 12px;
+    background: #0f0d0a; border: 1px solid #2e2820;
+    border-radius: 8px; padding: 12px 18px;
+    margin: 20px 0; font-size: 0.82rem; color: #8a8579;
+  }
+  .audio-bar .icon { font-size: 1.2rem; color: #c4a35a; }
+  .audio-bar .label { flex: 1; letter-spacing: 0.08em; }
+  .audio-bar button {
+    padding: 7px 16px; background: #1e1a14;
+    border: 1px solid #3e3830; border-radius: 5px;
+    color: #c8c4bc; font-family: inherit; font-size: 0.8rem; cursor: pointer;
+  }
+  .audio-bar button.playing { border-color: #c4a35a; color: #c4a35a; background: rgba(196,163,90,0.08); }
+</style>
+</head>
+<body>
+<audio id="bgm" src="final-recording.wav" preload="auto"></audio>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">final.html —— Final Footage · 2003-08-14 19:42</div>
+    </div>
+    <div class="window-body">
+      <div class="audio-bar">
+        <span class="icon">🎙️</span>
+        <span class="label">Audio from end of tape · Lu Yuan's last voice · 47 sec</span>
+        <button id="audioBtn" onclick="toggleAudio()">▶ Play</button>
+      </div>
+      <p class="dim">The video cuts off at 19:42. This audio was recovered from the physical layer of the tape.</p>
+      <div style="background:#0a0a0a;color:#ffb300;padding:24px;border-radius:6px;font-family:'Courier New',monospace;font-size:0.85rem;line-height:2;margin:20px 0;">
+        <p>[RECORDING STARTS]</p>
+        <p>…Actually, I'm not that scared.</p>
+        <p>I know who it is. I know what they want.</p>
+        <p>I just didn't think it would be this soon.</p>
+        <p>If anyone ever sees this tape—</p>
+        <p>Don't come looking for me.</p>
+        <p>And don't hate them.</p>
+        <p>It was just an ordinary summer, and then it ended.</p>
+        <p>That's all.</p>
+        <p>[RECORDING ENDS]</p>
+      </div>
+      <div style="text-align:center;padding:20px 0;">
+        <p style="color:#c4a35a;font-size:1rem;letter-spacing:0.15em;">— END —</p>
+        <p class="dim" style="margin-top:8px;">Thank you for finishing the tape.</p>
+        <p class="dim" style="margin-top:24px;font-size:0.75rem;">Lu Yuan · 1986-2003 · He recorded one summer</p>
+        <p class="dim" style="font-size:0.75rem;">You · Now · The last person to play this tape to the end</p>
+      </div>
+      <div class="timetower" style="margin-top:20px;">
+        <strong>🕰️ AFTER</strong><br>
+        September 2003 — police searched the old dock area, found nothing.<br>
+        October 2003 — Lu Yuan's parents moved out of Qingchuan. The tape was left behind.<br>
+        2024 — you bought it at a flea market.<br>
+        You are the first to play it to the end.
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <button class="btn" onclick="if(confirm('Reset all progress?')){resetState();location.href='index.html';}">Start Over</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('audioBtn');
+  function toggleAudio() {
+    if (bgm.paused) {
+      bgm.play(); btn.textContent = '⏸ Pause'; btn.classList.add('playing');
+    } else {
+      bgm.pause(); btn.textContent = '▶ Play'; btn.classList.remove('playing');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    bgm.volume = 0.85;
+    bgm.play().then(() => {
+      btn.textContent = '⏸ Pause'; btn.classList.add('playing');
+    }).catch(() => {});
+  });
+</script>
+</body>
+</html>

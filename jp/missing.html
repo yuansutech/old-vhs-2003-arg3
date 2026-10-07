@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>失踪者ファイル</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drive">
+  <div class="window">
+    <div class="window-bar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">missing.html —— 青川公安局</div>
+    </div>
+    <div class="window-body">
+      <p><strong>氏名：</strong>陸遠</p>
+      <p><strong>性別：</strong>男</p>
+      <p><strong>生年：</strong>1986年</p>
+      <p><strong>失踪日：</strong><span class="hl">2003年8月14日</span></p>
+      <p><strong>最後の目撃：</strong>青川市西区 · 陸遠の自宅</p>
+      <p><strong>状態：</strong><span class="warn">未解決</span></p>
+      <hr style="border:none;border-top:1px dashed #2e2820;margin:16px 0;">
+      <p class="dim">2003年8月14日の夕方、ご近所さんが陸遠を自宅で最後に目撃した。同日失踪。両親が翌日、家が空になっているのを発見した。</p>
+      <p class="dim">彼の部屋からパナソニックのビデオカメラ一台とVHSテープ一本（シリアルVHS-4417）が見つかった。</p>
+      <p class="dim">テープには2003年6月から8月までの映像が収められ、「車がつけてくる」と口にする場面が含まれている。</p>
+      <p class="dim">同じ団地にシルバーグレーのバンが数日間駐車していた。8月15日以降に消えた。ナンバーは記録されなかった。</p>
+      <p class="warn" style="margin-top:12px;">事件は未解決のまま。</p>
+      <div class="timetower">
+        <strong>🔑 ファイル番号</strong><br>
+        QC2003-0814<br>
+        この番号は：失踪日 + 最後の録画日
+      </div>
+      <div class="searchbar">
+        <input type="text" placeholder="検索…" autocomplete="off">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  saveNote('🔑 ファイル番号 QC2003-0814、パスワード 0814');
+});
+</script>
+</body>
+</html>
